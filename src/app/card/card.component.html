@@ -1,18 +1,26 @@
-
-  <div class="header-img">
-    <div class="fav"></div>
-    <img src="{{room.image}}" alt="">
+<div class="header-img">
+  <div class="like">
+    <i class="material-icons">
+      favorite_border
+    </i>
   </div>
-  <div class="info-description">
-    <h2>{{room.destinationName}}</h2>
-    <h3>{{room.name}}</h3>
-    <p>{{room.shortDesc}}</p>
+  <img src="{{room.image}}" alt="">
+  <div class="hurry">Hurry up! 
+    <i class="material-icons">
+      access_time
+    </i>
   </div>
-  <div class="info-price">
-    <div class="discount">{{room.discount}}</div>
-    <div class="preprice">{{room.pricePreLabel}} {{room.price}}</div>
-    <div class="postprice">{{room.pricePostLabel}}</div>
-  </div>
-  <div class="info-more">
-    <button class="btn"> > </button>
-  </div>
+</div>
+<div class="info-description">
+  <h2>{{room.destinationName}}</h2>
+  <h3>{{room.name}}</h3>
+  <p>{{room.shortDesc}}</p>
+</div>
+<div class="info-price">
+  <div class="discount">{{room.discount}}%</div>
+  <div class="preprice">{{room.pricePreLabel}} {{room.price}}</div>
+  <div class="postprice">{{room.pricePostLabel}}</div>
+</div>
+<div class="info-more">
+  <button class="btn"> > </button>
+</div>
