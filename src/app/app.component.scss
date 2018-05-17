@@ -1,0 +1,112 @@
+@import '../templates/colors';
+
+h2, h3 {
+  font-weight: bold;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+  background: $turquoise;
+  border: none;
+  font-size: 20px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  &:hover {
+    background: $darkturqoise;
+  }
+}
+
+.layout {
+  padding: 15px;
+  background: $lightgrey;
+  display: grid;
+  grid-gap: 34px;
+  grid-template-columns: repeat(2, minmax(462px, 1fr));
+  grid-template-rows: 301px 492px;
+  [class$='-card'] {
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px $darkgrey;
+    box-shadow: 0px 0px 5px $darkgrey;
+    background: $white;
+    display: grid;
+    grid-template-columns: 1fr 20% minmax(70px, 10%);
+    grid-template-rows: 60% 40%;
+    grid-template-areas:
+      'header header header'
+      'info price more';
+
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .header-img {
+      grid-area: header;
+    }
+    .info-description {
+      grid-area: info;
+      padding: 15px;
+
+      h2 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+    .info-price {
+      grid-area: price;
+      text-align: center;
+      line-height: 19px;
+      .discount {
+        font-weight: bold;
+        font-size: 2em;
+        line-height: 1em;
+        color: $turquoise;
+      }
+    }
+    .info-more {
+      grid-area: more;
+      padding: 15px;
+    }
+    .info-description,
+    .info-price,
+    .info-more {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  }
+  .big-card {
+    grid-column: span 2;
+    grid-template-columns: 1fr 10% minmax(70px, 5%);
+    grid-template-rows: 75% 25%;
+  }
+  .mark-fab {
+    float: right;
+    width: 20px;
+    height: 20px;
+  }
+}
