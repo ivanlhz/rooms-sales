@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RoomsService } from 'src/services/rooms.service';
+import { RoomRequest } from '../interfaces/roomRequest';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  public roomList: Array<any> = [];
+
+  constructor(
+    private roomService: RoomsService
+  ) {
+
+    this.roomService.get().subscribe( (data: RoomRequest) => {
+      this.roomList = data.content;
+    });
+  }
 }
